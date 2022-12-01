@@ -4,6 +4,9 @@
  */
 package dungeontreasure;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  *
  * @author Ronja
@@ -16,9 +19,12 @@ public class Room {
         this.roomDesc = roomDesc;
         this.doors = doors;
     }
-    
+
     public void doNarrative() {
         System.out.println(roomDesc);
-        
+        for (Door door : doors) {
+            System.out.println(door.getDoor());
+        }
     }
+
 }
