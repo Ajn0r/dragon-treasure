@@ -4,7 +4,6 @@
  */
 package dungeontreasure;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -12,13 +11,16 @@ import java.util.Scanner;
  * @author Ronja
  */
 public class Dungeon {
-    private ArrayList<Room> rooms;
+    private Room[][] rooms;
     private Room currentRoom;
     private String welcomeMsg;
+    private String playerName;
     
-    public Dungeon(ArrayList<Room> rooms, String welcomeMsg) {
+    public Dungeon(Room[][] rooms, Room currentRoom, String welcomeMsg, String playerName) {
         this.rooms = rooms;
+        this.currentRoom = currentRoom;
         this.welcomeMsg = welcomeMsg;
+        this.playerName = playerName;
     }
 
     public void playGame() {
@@ -26,11 +28,10 @@ public class Dungeon {
 
         System.out.println(welcomeMsg);
         // Setting currentRoom to first room in cave
-        currentRoom = rooms.get(0);
-        for (Room room : rooms) {
-            currentRoom = room;
-            currentRoom.doNarrative();
-            String choise = input.nextLine();
-        }
+        // for (Room room : rooms) {
+        //    currentRoom = room;
+        //    currentRoom.doNarrative();
+        //    String choise = input.nextLine();
+        // }
     }
 }
